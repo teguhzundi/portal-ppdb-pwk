@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background-image: url('bg-pattern.svg');
+  transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.portal-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  max-width: 500px;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.portal-header {
+  height: 60px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.portal-header-logo {
+  height: 100%;
+}
+
+.portal-header-text {
+  font-weight: bold;
+}
+
+.portal-item {
+  min-height: 200px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  justify-content: space-between;
+  color: #333;
+  font-size: 16px;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(80, 80, 80, 0.1);
+  border: 1px solid #eee;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.portal-item-action a {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  background: #eee;
+  color: #333;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.portal-item-action a:hover {
+  background: #ddd;
+}
+
+.portal-item:hover {
+  color: #fff;
+  border: 1px solid #000;
+}
+
+.portal-item.sd::before,
+.portal-item.smp::before {
+  content: '';
+  position: absolute;
+  background-image: url('bg-pattern.svg');
+  background-color: #76161e;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+  transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0;
+  transform: scale(1.4) translateY(100px);
+}
+
+.portal-item.smp::before {
+  background-color: #000b59;
+}
+
+.portal-item.sd:hover::before,
+.portal-item.smp:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
